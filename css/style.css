@@ -426,6 +426,7 @@ footer {
     cursor: pointer; /* Tambahkan pointer untuk memperjelas tombol dapat diklik */
     animation-name: appear;
     animation-timeline: scroll(y);
+    z-index: 1000000;
 }
 
 @keyframes appear {
@@ -497,7 +498,11 @@ footer {
         width: 40%;
         display: none; /* Tidak terlihat dan tidak ada dalam layout */
         z-index: 10000;
-    }    
+    }
+
+    .nav-toggle input:checked + .nav-section {
+        display: flex; /* Menampilkan elemen saat input dicentang */
+    }
 
     .nav-section.slide {
         transform: translateX(0);

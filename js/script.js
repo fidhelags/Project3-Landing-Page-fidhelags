@@ -1,10 +1,10 @@
-const navToggle = document.querySelector(".nav-toggle input"); // tombol toggle
-const navSection = document.querySelector(".nav-section"); // elemen yang ingin disembunyikan/tampilkan
+const navToggle = document.querySelector(".nav-toggle input");
+const navSection = document.querySelector(".nav-section"); // Elemen menu
 
-navToggle.addEventListener('click', () => {
-    if (navSection.style.display === 'none') {
-        navSection.style.display = 'flex'; // Menampilkan elemen
+navToggle.addEventListener('change', () => {
+    if (navToggle.checked) {
+        navSection.style.display = 'flex'; // Menampilkan menu
     } else {
-        navSection.style.display = 'none'; // Menyembunyikan elemen
+        navSection.style.display = 'none'; // Menyembunyikan menu
     }
 });
