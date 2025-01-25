@@ -1,0 +1,673 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Unbounded", serif;
+    background-color: #1f1f1f;
+    /* overflow-x: hidden; */
+    margin-top: 0;
+}
+
+.h1 {
+    color: white;
+    font-weight: 500;
+}
+
+/* Bagian Navbar */
+.nav-banner {
+    width: 95%;
+    margin: auto;
+    height: 100%;
+    border-radius: 0 0 50px 50px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Text Navbar */
+.logo-text {
+    margin-left: 3rem;
+    color: #CDF361;
+}
+
+/* Menu-menu Navbar */
+.nav-section {
+    display: flex;
+    margin-right: 3rem;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Toggle Navbar (Untuk Mobile) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    background-color: black;
+    margin-right: 3em;
+    position: relative;
+    align-items: center;
+}
+
+/* Supaya Navbar muncul saat ditekan */
+.nav-toggle input {
+    position: absolute;
+    width: 160px;
+    height: 28px;
+    left: -70px;
+    bottom: -7px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Bentuk dari Toggle Navbar (3 garis) */
+.nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #CDF361; /* Warna garis */
+    transition: all 0.5s;
+    transform-origin: center;
+}
+
+/* Navbar untuk versi toggle (Hamburger) */
+.nav-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle input:checked ~ span:nth-child(4) {
+    transform: rotate(-45deg) translate(6px, -6px) ;
+}
+
+.nav-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0) ;
+}
+
+@media screen and (max-width: 856px) {
+    .font-home {
+        line-height: normal;
+    }
+}
+
+/* Style Font dari Navbar */
+.a-nav {
+    font-size: 1.2rem;
+}
+
+.a-nav.home {
+    color: #CDF361;
+    text-decoration: none;
+}
+
+.a-nav.profile {
+    color: #41ADFE;
+    text-decoration: none;
+}
+
+.a-nav.projects {
+    color: #FFDB61;
+    text-decoration: none;
+}
+
+/* Style underline a */
+.nav-section .a-nav:hover {
+    border-bottom: 2px solid #E2FF8E;
+}
+
+/* Banner Grid untuk pemisah text dan illustration */
+.home-banner {
+    display: grid;
+    width: 95%;
+    margin: auto;
+    height: calc(100vh - 120px);
+    grid-template-areas: "home-text-container home-image";
+    grid-template-columns: 2fr 1.2fr;
+    grid-template-rows: 1fr;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 50px;
+}
+
+/* Grid bagian illustration*/
+.home-image {
+    grid-area: home-image;
+    width: 20em;
+    height: 20em;
+    background: url(images/spaceship.png) no-repeat center;
+    background-size: cover; 
+    margin: auto;
+}
+
+/* Cotainer untuk text */
+.home-text-container {
+    grid-area: home-text-container;
+    margin: auto;
+    margin-left: 3rem;
+}
+
+/* Container untuk banner connect */
+.logo-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* Container untuk connect */
+.connect-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Banner untuk tiap apps */
+.contact1-banner {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: #fff url(images/instagram.png) no-repeat center;
+    background-size: cover;
+}
+
+.contact2-banner {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: #fff url(images/github.png) no-repeat center;
+    background-size: cover;;
+}
+
+.contact3-banner {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background: #fff url(images/linkedin.png) no-repeat center;
+    background-size: cover;
+}
+
+/* Container untuk text Let's Connect! */
+.connect-text-container {
+    display: flex;
+    align-items: center; 
+}
+
+/* Style untuk font di home */
+.h1-home {
+    line-height: 0.5;
+    color: white;
+}
+
+.p-home {
+    color: white;
+}
+
+/* Style untuk Let's Connect! */
+.h1-connect {
+    color: #E2FF8E;
+    font-weight: 500;
+    margin-left: 15px;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* Flex antara judul section dan profile banner */
+.profile-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* judul section */
+.h1-profile {
+    color: #CDF361;
+    font-size: 2rem;
+    margin: auto 0;
+}
+
+/* background dari profile container */
+.profile-banner {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    background-color: black;
+    width: 70%;
+    height: 250px;
+    border-radius: 50px;
+}
+
+/* Grid untuk image dan text */
+.profile-container {
+    display: grid;
+    overflow: visible;
+    grid-template-areas: "profile-image profile-text";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+}
+
+/* Bagian grid image */
+.profile-image {
+    grid-area: profile-image; 
+    width: 220px;
+    height: 300px;
+    background: white url(images/formal.jpg) no-repeat center;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+/* Bagian grid text */
+.profile-text {
+    padding: 40px;
+    margin: auto;
+    grid-area: profile-text; 
+    align-items: center;
+    color: white;
+}
+
+/* view more untuk ke menu profile */
+.profile-view {
+    color: #E2FF8E;
+    text-decoration: none;
+    animation: blink 2s infinite;
+}
+
+/* Projects Section */
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 3rem;
+}
+
+/* Tiap-tiap cardnya */
+.card {
+    margin: auto;
+    width: 300px;
+    background-color: black;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Judul card */
+.h1-card {
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+/* Image untuk di card */
+.card1-image {
+    margin: auto;
+    background: url(images/programming.png) no-repeat center;
+    width: 14em;
+    height: 14em;
+    background-size: cover;
+}
+
+.card2-image {
+    margin: auto;
+    background: url(images/UIUX.png) no-repeat center;
+    width: 14em;
+    height: 14em;
+    background-size: cover;
+}
+
+.card3-image {
+    margin: auto;
+    background: url(images/graphics.png) no-repeat center;
+    width: 14em;
+    height: 14em;
+    background-size: cover;
+}
+
+/* Untuk Link ke menu yang sesuai*/
+.card-button {
+    text-decoration: none;
+    font-weight: bold;
+    color: #E2FF8E;
+    padding: 5px 10px;
+    background-color: #1f1f1f;
+    border: 2px solid #CDF361;
+    border-radius: 10px;
+    animation: border-blink 2s infinite;
+}
+
+@keyframes border-blink {
+    0%, 100% {
+        box-shadow: 0 0 5px #E2FF8E, 0 0 10px #E2FF8E; /* Cahaya nyala */
+    }
+    50% {
+        box-shadow: none; /* Cahaya mati */
+    }
+}
+
+/* Isi card (bagian text) */
+.card-content {
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Style font untuk di section projects */
+.h1-projects {
+    color: #CDF361;
+    font-size: 2rem;
+    margin: auto 0;
+    margin-bottom: 20px;
+}
+
+
+/* footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #CDF361;
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+}
+
+/* Attribution section */
+.attribution {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* Pengelompokkan tiap 1 attribution */
+.text-attribution {
+    margin: 10px;
+}
+
+/* Style a di attribution */
+.attribution a {
+    color: #CDF361;
+}
+
+/* Tombol untuk scroll up */
+.up-button {
+    width: 40px;
+    height: 40px;
+    background: #CDF361 url(images/arrow.png) no-repeat center;
+    border-radius: 50%;
+    background-size: cover;
+    right: 15px;
+    bottom: 15px;
+    cursor: pointer; /* Tambahkan pointer untuk memperjelas tombol dapat diklik */
+    animation-name: appear;
+    animation-timeline: scroll(y);
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        display: none;
+        position: fixed;
+    }
+    3% {
+        opacity: 0;
+        display: none;
+        position: fixed;
+    }
+    3.5% {
+        opacity: 1;
+        display: block;
+        position: fixed;
+    }
+    100% {
+        opacity: 1;
+        display: block;
+        position: fixed;
+    }
+    
+}
+
+/* MEDIA */
+@media screen and (max-width: 320px) {
+    .home-banner {
+        height: 100%;
+    }
+
+    .h1-connect {
+        font-size: 1em;
+    }
+
+    .card1-image, .card2-image, .card3-image {
+        width: 14rem;
+        height: 14rem;
+    }
+
+    .nav-banner {
+        height: 70px;
+    }
+}
+
+@media screen and (min-width: 320.98px) {
+    .card1-image, .card2-image, .card3-image {
+        width: 20em;
+        height: 20em;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* NAVBAR */
+    .nav-section {
+        position: absolute;
+        right: 35px;
+        border-radius: 10px;
+        margin: auto 0;
+        top: 83px;
+        background-color: black;
+        border: 2px solid #1f1f1f;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly;
+        height: 20vh;
+        width: 40%;
+        display: none; /* Tidak terlihat dan tidak ada dalam layout */
+        z-index: 10000;
+    }    
+
+    .nav-section.slide {
+        transform: translateX(0);
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+       
+    .nav-section a {
+        padding-right: 0;
+    }
+
+    /* Style font bagian home */
+    .font-hello {
+        line-height: 0;
+    }
+
+    .font-home {
+        line-height: normal;
+    }
+
+    /* Card */
+    .card {
+        width: 100%;
+        padding-bottom: 60px;
+    }
+
+    /* Style judul card */
+    .h1-card {
+        margin-bottom: 2em;
+        color: #fff;
+    }
+    
+    /* Tombol di card */
+    .card-button {
+        padding: 15px 25px;
+    }
+
+    /* Tombol scroll up */
+    .up-button {
+        width: 30px;
+        height: 30px;
+        right: 8px;
+        bottom: 8px;
+    }
+
+     /* footer */
+    .attribution {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .text-attribution {
+        margin: auto 0;
+    }
+}
+
+@media screen and (max-width: 767.98px) {
+    /* HOME */
+    .home-banner {
+        display: grid;
+        grid-template-areas: "home-container";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        position: relative; /* Wajib untuk pseudo-element */
+        margin-top: 20px;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden; /* Agar pseudo-element tidak keluar area banner */
+        z-index: 1; /* Posisi elemen utama di atas background */
+    }
+
+    .home-banner::before {
+        content: ""; /* Pseudo-element kosong */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(images/spaceship.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0.5; /* Atur tingkat opacity gambar */
+        z-index: -1; /* Pastikan di belakang konten utama */
+        border-radius: 50px; /* Ikuti border-radius banner */
+    }
+    
+    .home-text-container {
+        padding: 10px;
+        grid-area: home-container;
+        margin: auto;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .home-image {
+        display: none;
+    }
+
+    .profile-section {
+        margin-top: 30px;
+    }
+
+    .profile-banner {
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .profile-container {
+        display: grid;
+        overflow: visible;
+        grid-template-areas: "profile-image"
+                            "profile-text";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .profile-image {
+        grid-area: profile-image;
+        margin: auto;
+        margin-top: 60px;
+        width: 250px;
+        height: 280px;
+        background: white url(images/formal.jpg) no-repeat center;
+        background-size: cover;
+        border-radius: 30px;
+    }
+
+    .profile-text {
+        padding: 40px;
+        text-align: justify;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+    .profile-section {
+        margin: 30px;
+    }
+
+    .profile-banner {
+        width: 95%;
+        height: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .profile-image {
+        grid-area: profile-image;
+        margin: auto;
+        width: 180px;
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .nav-banner {
+        width: 100%;
+    }
+
+    .home-banner {
+        width: 100%;
+    }
+}
