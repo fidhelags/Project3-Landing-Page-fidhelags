@@ -45,9 +45,9 @@ body {
     display: none;
     flex-direction: column;
     height: 20px;
+    right: 3rem;
     justify-content: space-between;
     background-color: black;
-    margin-right: 3em;
     position: relative;
     align-items: center;
 }
@@ -55,9 +55,9 @@ body {
 /* Supaya Navbar muncul saat ditekan */
 .nav-toggle input {
     position: absolute;
-    width: 160px;
+    width: 30px;
     height: 28px;
-    left: -70px;
+    left: -4px;
     bottom: -7px;
     opacity: 0;
     cursor: pointer;
@@ -85,12 +85,6 @@ body {
 
 .nav-toggle input:checked ~ span:nth-child(3) {
     transform: scale(0) ;
-}
-
-@media screen and (max-width: 856px) {
-    .font-home {
-        line-height: normal;
-    }
 }
 
 /* Style Font dari Navbar */
@@ -454,6 +448,13 @@ footer {
 }
 
 /* MEDIA */
+@media screen and (min-width: 320.98px) {
+    .card1-image, .card2-image, .card3-image {
+        width: 20em;
+        height: 20em;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .home-banner {
         height: 100%;
@@ -461,6 +462,12 @@ footer {
 
     .h1-connect {
         font-size: 1em;
+    }
+
+    .profile-text {
+        padding: 10px;
+        text-align: center;
+        padding-bottom: 50px;
     }
 
     .card1-image, .card2-image, .card3-image {
@@ -471,23 +478,34 @@ footer {
     .nav-banner {
         height: 70px;
     }
-}
 
-@media screen and (min-width: 320.98px) {
-    .card1-image, .card2-image, .card3-image {
-        width: 20em;
-        height: 20em;
+    .nav-section {
+        position: absolute;
+        right: 3rem;
+        border-radius: 10px;
+        margin: auto 0;
+        top: 70px;
+        background-color: black;
+        border: 2px solid #1f1f1f;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly;
+        height: 40vh;
+        width: 50%;
+        display: none; /* Tidak terlihat dan tidak ada dalam layout */
+        z-index: 10000;
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 321.98px) and (max-width: 574.98px){
     /* NAVBAR */
     .nav-section {
         position: absolute;
-        right: 35px;
+        right: 3rem;
         border-radius: 10px;
         margin: auto 0;
-        top: 83px;
+        top: 82px;
         background-color: black;
         border: 2px solid #1f1f1f;
         flex-direction: column;
@@ -495,9 +513,22 @@ footer {
         text-align: center;
         justify-content: space-evenly;
         height: 20vh;
-        width: 40%;
+        width: 50%;
         display: none; /* Tidak terlihat dan tidak ada dalam layout */
         z-index: 10000;
+    }
+}
+
+@media screen and (min-width: 575.98px) {
+    .profile-text {
+        padding: 40px;
+        padding-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body {
+        overflow-x: hidden;
     }
 
     .nav-toggle input:checked + .nav-section {
@@ -517,9 +548,6 @@ footer {
     }
 
     /* Style font bagian home */
-    .font-hello {
-        line-height: 0;
-    }
 
     .font-home {
         line-height: normal;
@@ -561,6 +589,10 @@ footer {
 
     .text-attribution {
         margin: auto 0;
+    }
+    
+    .profile-view {
+        display: block;
     }
 }
 
@@ -640,11 +672,6 @@ footer {
         background-size: cover;
         border-radius: 30px;
     }
-
-    .profile-text {
-        padding: 40px;
-        text-align: justify;
-    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
@@ -665,9 +692,24 @@ footer {
         width: 180px;
         height: 260px;
     }
+
+    .profile-text {
+        padding: 40px;
+        text-align: justify;
+    }
+
+    .font-home {
+        line-height: normal;
+    }
 }
 
 @media screen and (max-width: 992px) {
+    .home-banner {
+        height: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
     .nav-banner {
         width: 100%;
     }
